@@ -1,0 +1,355 @@
+table.dataTable{clear:both}table.dataTable td,table.dataTable th{-webkit-box-sizing:content-box;box-sizing:content-box}table.dataTable td.dataTables_empty,table.dataTable th.dataTables_empty{text-align:center}table.dataTable.nowrap th,table.dataTable.nowrap td{white-space:nowrap}div.dataTables_wrapper div.row.uk-grid.dt-merge-grid{margin-top:5px}div.dataTables_wrapper div.dataTables_length label{font-weight:normal;text-align:left;white-space:nowrap}div.dataTables_wrapper div.dataTables_length select{width:75px;display:inline-block}div.dataTables_wrapper div.dataTables_filter{text-align:right}div.dataTables_wrapper div.dataTables_filter label{font-weight:normal;white-space:nowrap;text-align:left}div.dataTables_wrapper div.dataTables_filter input{margin-left:0.5em;display:inline-block;width:auto}div.dataTables_wrapper div.dataTables_info{padding-top:8px;white-space:nowrap}div.dataTables_wrapper div.dataTables_paginate{margin:0;white-space:nowrap;text-align:right}div.dataTables_wrapper div.dataTables_paginate ul.pagination{margin:2px 0;white-space:nowrap}div.dataTables_wrapper div.dataTables_processing{position:absolute;top:50%;left:50%;width:200px;margin-left:-100px;margin-top:-26px;text-align:center;padding:1em 0}table.dataTable thead>tr>th.sorting_asc,table.dataTable thead>tr>th.sorting_desc,table.dataTable thead>tr>th.sorting,table.dataTable thead>tr>td.sorting_asc,table.dataTable thead>tr>td.sorting_desc,table.dataTable thead>tr>td.sorting{padding-right:30px}table.dataTable thead>tr>th:active,table.dataTable thead>tr>td:active{outline:none}table.dataTable thead .sorting,table.dataTable thead .sorting_asc,table.dataTable thead .sorting_desc,table.dataTable thead .sorting_asc_disabled,table.dataTable thead .sorting_desc_disabled{cursor:pointer;position:relative}table.dataTable thead .sorting:before,table.dataTable thead .sorting:after,table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_asc:after,table.dataTable thead .sorting_desc:before,table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_asc_disabled:after,table.dataTable thead .sorting_desc_disabled:before,table.dataTable thead .sorting_desc_disabled:after{position:absolute;bottom:1.2em;display:block;opacity:0.3}table.dataTable thead .sorting:before,table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_desc:before,table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_desc_disabled:before{right:1em;content:"\2191"}table.dataTable thead .sorting:after,table.dataTable thead .sorting_asc:after,table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting_asc_disabled:after,table.dataTable thead .sorting_desc_disabled:after{right:0.5em;content:"\2193"}table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_desc:after{opacity:1}table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_desc_disabled:after{opacity:0}div.dataTables_scrollHead table.dataTable{margin-bottom:0 !important}div.dataTables_scrollBody table{border-top:none;margin-top:0 !important;margin-bottom:0 !important}div.dataTables_scrollBody table thead .sorting:after,div.dataTables_scrollBody table thead .sorting_asc:after,div.dataTables_scrollBody table thead .sorting_desc:after{display:none}div.dataTables_scrollBody table tbody tr:first-child th,div.dataTables_scrollBody table tbody tr:first-child td{border-top:none}div.dataTables_scrollFoot table{margin-top:0 !important;border-top:none}@media screen and (max-width: 767px){div.dataTables_wrapper div.dataTables_length,div.dataTables_wrapper div.dataTables_filter,div.dataTables_wrapper div.dataTables_info,div.dataTables_wrapper div.dataTables_paginate{text-align:center}}table.dataTable.uk-table-condensed>thead>tr>th{padding-right:20px}table.dataTable.uk-table-condensed .sorting:after,table.dataTable.uk-table-condensed .sorting_asc:after,table.dataTable.uk-table-condensed .sorting_desc:after{top:6px;right:6px}
+
+* ========================================================================
+Component: Table
+========================================================================== */
+/*
+ * 1. Remove most spacing between table cells.
+ * 2. Behave like a block element
+ * 3. Style
+ */
+.uk-table {
+    /* 1 */
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* 2 */
+    width: 100%;
+    /* 3 */
+    margin-bottom: 20px;
+}
+/* Add margin if adjacent element */
+* + .uk-table {
+    margin-top: 20px;
+}
+/* Header cell
+ ========================================================================== */
+/*
+ * 1. Style
+ */
+.uk-table th {
+    padding: 16px 12px;
+    text-align: left;
+    vertical-align: bottom;
+    /* 1 */
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: #999;
+    text-transform: uppercase;
+}
+/* Cell
+ ========================================================================== */
+.uk-table td {
+    padding: 16px 12px;
+    vertical-align: top;
+}
+/*
+ * Remove margin from the last-child
+ */
+.uk-table td > :last-child {
+    margin-bottom: 0;
+}
+/* Footer
+ ========================================================================== */
+.uk-table tfoot {
+    font-size: 0.875rem;
+}
+/* Caption
+ ========================================================================== */
+.uk-table caption {
+    font-size: 0.875rem;
+    text-align: left;
+    color: #999;
+}
+/* Alignment modifier
+ ========================================================================== */
+.uk-table-middle,
+.uk-table-middle td {
+    vertical-align: middle !important;
+}
+/* Style modifiers
+ ========================================================================== */
+/*
+ * Divider
+ */
+.uk-table-divider > tr:not(:first-child),
+.uk-table-divider > :not(:first-child) > tr,
+.uk-table-divider > :first-child > tr:not(:first-child) {
+    border-top: 1px solid #e5e5e5;
+}
+/*
+ * Striped
+ */
+.uk-table-striped > tr:nth-of-type(odd),
+.uk-table-striped tbody tr:nth-of-type(odd) {
+    background: #f8f8f8;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+/*
+ * Hover
+ */
+.uk-table-hover > tr:hover,
+.uk-table-hover tbody tr:hover {
+    background: #ffd;
+}
+/* Active state
+ ========================================================================== */
+.uk-table > tr.uk-active,
+.uk-table tbody tr.uk-active {
+    background: #ffd;
+}
+/* Size modifier
+ ========================================================================== */
+.uk-table-small th,
+.uk-table-small td {
+    padding: 10px 12px;
+}
+.uk-table-large th,
+.uk-table-large td {
+    padding: 22px 12px;
+}
+/* Justify modifier
+ ========================================================================== */
+.uk-table-justify th:first-child,
+.uk-table-justify td:first-child {
+    padding-left: 0;
+}
+.uk-table-justify th:last-child,
+.uk-table-justify td:last-child {
+    padding-right: 0;
+}
+/* Cell size modifier
+ ========================================================================== */
+.uk-table-shrink {
+    width: 1px;
+}
+.uk-table-expand {
+    min-width: 150px;
+}
+/* Cell link modifier
+ ========================================================================== */
+/*
+ * Does not work with `uk-table-justify` at the moment
+ */
+.uk-table-link {
+    padding: 0 !important;
+}
+.uk-table-link > a {
+    display: block;
+    padding: 16px 12px;
+}
+.uk-table-small .uk-table-link > a {
+    padding: 10px 12px;
+}
+/* Responsive table
+ ========================================================================== */
+/* Phone landscape and smaller */
+@media (max-width: 959px) {
+    .uk-table-responsive,
+    .uk-table-responsive tbody,
+    .uk-table-responsive th,
+    .uk-table-responsive td,
+    .uk-table-responsive tr {
+        display: block;
+    }
+    .uk-table-responsive thead {
+        display: none;
+    }
+    .uk-table-responsive th,
+    .uk-table-responsive td {
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:first-child) > a {
+        padding-top: 5px !important;
+    }
+    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:last-child) > a {
+        padding-bottom: 5px !important;
+    }
+    .uk-table-justify.uk-table-responsive th,
+    .uk-table-justify.uk-table-responsive td {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.uk-table tbody tr {
+    transition: background-color 0.1s linear;
+}
+
+
+
+
+.uk-width-1-1 {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.uk-grid {
+    display: flex;
+    /* 1 */
+    flex-wrap: wrap;
+    /* 2 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.uk-width-1-2 {
+    width: 50%;
+}
+
+select.uk-form-small.uk-select, .uk-input {
+    display: block;
+    padding: .2rem .25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: auto !important;
+}
+
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate  {
+    padding: 0 1rem;
+}
+
+.uk-pagination > * > * {
+    /* 1 */
+    display: block;
+    /* 2 */
+    color: #999;
+    transition: color 0.1s ease-in-out;
+}
+/* Hover + Focus */
+.uk-pagination > * > :hover,
+.uk-pagination > * > :focus {
+    color: #666;
+    text-decoration: none;
+}
+/* Active */
+.uk-pagination > .uk-active > * {
+    color: #666;
+}
+/* Disabled */
+.uk-pagination > .uk-disabled > * {
+    color: #999;
+}
+
+.uk-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.uk-flex-right {
+    justify-content: flex-end;
+}
+
+.uk-disabled {
+    pointer-events: none;
+}
+
+.uk-width-2-5 {
+    width: 40%;
+}
+.uk-width-3-5 {
+    width: 60%;
+}
+
+.paging_simple_numbers {
+    line-height: 2.5;
+}
+
+.uk-pagination span, .uk-pagination a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.uk-pagination .paginate_button:first-child span {
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+.uk-pagination .paginate_button:last-child span {
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+}
+
+
+.paginate_button span, .paginate_button a {
+    position: relative;
+    display: block;
+    color: #0d6efd;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    line-height: 1.5;
+}
+
+.paginate_button span:hover {
+    z-index: 2;
+    color: #024dbc;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.paginate_button span:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.paginate_button:not(:first-child) span {
+    margin-left: -1px;
+}
+
+.paginate_button.uk-active span {
+    z-index: 3;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.paginate_button.uk-disabled span {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+.paginate_button:first-child span {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.paginate_button:last-child span {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+
+
+
+
+.uk-pagination .paginate_button:first-child span {
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+.uk-pagination .paginate_button:last-child span {
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+}
